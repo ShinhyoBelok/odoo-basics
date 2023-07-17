@@ -9,6 +9,8 @@ class Libros(models.Model):
     editorial = fields.Char(string="Editorial", required=True)
     isbn = fields.Char(string="ISBN", required=True)
     autor_id = fields.Many2one(comodel_name="autores", string="Autor", required=True)
+    # Para hacer un campo relacionado tiene que ser desde un many2one
+    last_name_author = fields.Char(related="autor_id.last_name", string="Apellido")
     image = fields.Binary(string="image")
     categoria = fields.Many2one(comodel_name="libros.categoria", string="Categoria", required=True)
     state = fields.Selection([('draft','Borrador'),('published','Publicado')], default='draft')
