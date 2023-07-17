@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="libros_action" model="ir.actions.act_window">
+        <field name="name">Libros</field> <!--nombre de la action-->
+        <field name="res_model">libros</field><!--nombre de la tabla creado-->
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="autores_action" model="ir.actions.act_window">
+        <field name="name">Autores</field> <!--nombre de la action-->
+        <field name="res_model">autores</field><!--nombre de la tabla creado-->
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem name="Mi Libreria" id="libreria_menu"/>
+    <menuitem name="Libros" id="libros_menu" parent="libreria_menu" action="libros_action"/>
+    <menuitem name="Autor" id="Autores_menu" parent="libreria_menu" action="autores_action"/>
+</odoo>
