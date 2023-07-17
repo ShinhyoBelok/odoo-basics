@@ -33,6 +33,7 @@
                             <field name="autor_id"/>
                             <field name="last_name_author"/>
                             <field name="categoria"/>
+                            <field name="description"/>
                         </group>
                     </group>
                 </sheet>

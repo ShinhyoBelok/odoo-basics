@@ -14,6 +14,10 @@ class Libros(models.Model):
     image = fields.Binary(string="image")
     categoria = fields.Many2one(comodel_name="libros.categoria", string="Categoria", required=True)
     state = fields.Selection([('draft','Borrador'),('published','Publicado')], default='draft')
+    description = fields.Char(string="Descripcion", compute="_compute_description")
+
+    def _compute_description(self):
+        self.description = self.name + ' | ' + self.autor_id.name + ' ' + self.autor_id.last_name +' | ' + self.categoria.name
 
     def btn_publicar(self):
         self.state = 'published'
