@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 # estamos creando uan tabla en la base de datos
 class Libros(models.Model):
@@ -16,6 +16,7 @@ class Libros(models.Model):
     state = fields.Selection([('draft','Borrador'),('published','Publicado')], default='draft')
     description = fields.Char(string="Descripcion", compute="_compute_description")
 
+    @api.depends('name', 'autor_id.name', 'autor_id.last_name', 'categoria.name')
     def _compute_description(self):
         self.description = self.name + ' | ' + self.autor_id.name + ' ' + self.autor_id.last_name +' | ' + self.categoria.name
 
