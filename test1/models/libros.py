@@ -5,6 +5,7 @@ class Libros(models.Model):
     _name = 'libros' #nombre de la tabla
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+    supervisor = fields.Many2one(comodel_name="hr.employee", string="Supervisor")
     name = fields.Char(string="Nombre del libro", required=True, tracking=True) #nombre del campo
     editorial = fields.Char(string="Editorial", required=True)
     isbn = fields.Char(string="ISBN", required=True)

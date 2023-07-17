@@ -27,6 +27,7 @@
                     <group> <!--representa la pagina entera horizontalmente -->
                         <group> <!-- se didvide a usar solo la mitad izquierda -->
                             <field name="image" widget="image" class="oe_left oe_avatar" nolabal="1"/>
+                            <field name="supervisor" domain="[('es_supervisor','=', 'True')]"/>
                             <field name="name"/>
                             <field name="editorial"/>
                             <field name="isbn"/>
@@ -109,7 +110,7 @@
                 <field name="autor_id" string="Autor"/>
 
                 <!-- filtro rapido -->
-                <!-- el domina syntax [('el fields que se quiere filtrar','=','el filtro que se quiere')] -->
+                <!-- el domain syntax [('el fields que se quiere filtrar','=','el filtro que se quiere')] -->
                 <filter name="categoria_fantasia" string="Fantasia" domain="[('categoria','=','Fantasia')]"/>
                 <filter name="categoria_literatura" string="Literatura" domain="[('categoria','=','Literatura')]"/>
 
