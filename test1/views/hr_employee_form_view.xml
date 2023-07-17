@@ -2,7 +2,7 @@
 <odoo>
     <!-- agregar campo supervisor a hr.employee -->
 
-    <record id="libros_form_view" model="ir.ui.view">
+    <record id="hr_employee_test1_form_view" model="ir.ui.view">
         <field name="name">hr.employee.test1.form.view</field>
         <field name="model">hr.employee</field>
         <!-- este es un field que se necesita cuando estas modificando una vista de otro modulo -->
