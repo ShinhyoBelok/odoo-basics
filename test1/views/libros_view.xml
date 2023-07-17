@@ -1,5 +1,17 @@
 <?xml version="1.0" ?>
 <odoo>
+    <!--
+        decorations
+        decoration-muted: records will be light grey
+        decoration-danger: records will be light red
+        decoration-success: records will be light green
+        decoration-primary: records will be light purple
+        decoration-info: records will be light blue
+        decoration-warning: records will be light brown
+        decoration-bf: records will be light bold
+        decoration-it: records will be light italic
+     -->
+
     <!--    vista para formularios de los libros-->
     <record id="libros_form_view" model="ir.ui.view">
         <field name="name">libro.form.view</field>
@@ -35,13 +47,14 @@
         <field name="name">libro.tree.view</field>
         <field name="model">libros</field>
         <field name="arch" type="xml">
-            <tree string="Libros">
+            <tree string="Libros" decoration-success="state == 'published'" decoration-info="state == 'draft'">
                 <field name="name"/>
                 <field name="editorial"/>
                 <field name="isbn"/>
                 <field name="autor_id"/>
                 <field name="categoria"/>
-                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'published'"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'"
+                       decoration-success="state == 'published'"/>
             </tree>
         </field>
     </record>
