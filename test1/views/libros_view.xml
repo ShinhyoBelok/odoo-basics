@@ -19,7 +19,9 @@
         <field name="arch" type="xml">
             <form string="Libro">
                 <header>
-                    <field name="state" widget="statusbar" options="{'clickable':1}"/>
+                    <button name="btn_publicar" string="Publicar" type="object" states="draft" class="oe_highlight"/>
+                    <button name="btn_borrador" string="Borrador" type="object" states="published"/>
+                    <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <group> <!--representa la pagina entera horizontalmente -->

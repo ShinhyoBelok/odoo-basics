@@ -13,6 +13,12 @@ class Libros(models.Model):
     categoria = fields.Many2one(comodel_name="libros.categoria", string="Categoria", required=True)
     state = fields.Selection([('draft','Borrador'),('published','Publicado')], default='draft')
 
+    def btn_publicar(self):
+        self.state = 'published'
+
+    def btn_borrador(self):
+        self.state = 'draft'
+
     _sql_constraints = [("name_uiq", "unique (name)", "El nombre del libro ya existe")]
     #nombre del sql constraint
     #unique (los valores que queremos que sean unique)
