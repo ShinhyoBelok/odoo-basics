@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- agregar campo supervisor a hr.employee -->
+
+    <record id="libros_form_view" model="ir.ui.view">
+        <field name="name">hr.employee.test1.form.view</field>
+        <field name="model">hr.employee</field>
+        <!-- este es un field que se necesita cuando estas modificando una vista de otro modulo -->
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[2]/field[@name='coach_id']" position="after">
+                <field name="es_supervisor"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
